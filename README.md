@@ -37,3 +37,27 @@ Create `index.html` and `index.js` files
 Create a basic `webpack.config.js` file
 
 Add a npm build script in package.json `build: webpack`
+
+## Step 2 - Webpack configuration
+
+Install css loader and style loader
+`npm install --save-dev style-loader css-loader`
+
+Configure entry points and output format in webpack config
+
+Install HTMLWebpackPlugin
+
+`npm install --save-dev html-webpack-plugin`
+
+Install the clean webpack plugin
+`npm install --save-dev clean-webpack-plugin`
+
+Setup source maps using 'inline-source-map'
+
+Configure clean webpack to retain the index.html file
+
+Setup webpack dev server with Hot Module Replacement
+
+`npm install --save-dev webpack-dev-server`
+
+Set up runtime and vendor code bundles
