@@ -72,3 +72,11 @@ Configure ts.config.json file and webpack.config.js
 Create custom.d.ts file
 
 Create index.html template
+
+## Step 4 - React
+
+`npm install react react-dom`
+
+`npm install --save-dev @types/react @types/react-dom`
+
+Update index.ts file to index.tsx and implement App component
