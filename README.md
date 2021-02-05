@@ -3,10 +3,10 @@
 A boilerplate Webpack, React and TypeScript project.
 
 - Webpack 5.20.1
+- TypeScript 4.1.3
 
 To do:
 
-- TypeScript
 - React
 - Babel
 - ES Lint
@@ -61,3 +61,14 @@ Setup webpack dev server with Hot Module Replacement
 `npm install --save-dev webpack-dev-server`
 
 Set up runtime and vendor code bundles
+
+## Step 3 - TypeScript
+
+Install TypeScript
+`npm install --save-dev typescript ts-loader`
+
+Configure ts.config.json file and webpack.config.js
+
+Create custom.d.ts file
+
+Create index.html template

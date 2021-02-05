@@ -4,17 +4,11 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: {
-    app: "./src/index.js",
-  },
+  entry: "./src/index.ts",
   devtool: "inline-source-map",
   devServer: {
     contentBase: "./dist",
     hot: true,
-  },
-  output: {
-    filename: "[name].[contenthash].js",
-    path: path.resolve(__dirname, "dist"),
   },
   optimization: {
     moduleIds: "deterministic",
@@ -29,14 +23,13 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
-    new HtmlWebpackPlugin({
-      title: "React 2021",
-    }),
-  ],
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
@@ -47,4 +40,17 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"],
+  },
+  output: {
+    filename: "[name].[chunkhash].js",
+    path: path.resolve(__dirname, "dist"),
+  },
+  plugins: [
+    new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+    }),
+  ],
 };
