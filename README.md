@@ -80,3 +80,13 @@ Create index.html template
 `npm install --save-dev @types/react @types/react-dom`
 
 Update index.ts file to index.tsx and implement App component
+
+## Step 5 - Babel
+
+Install and configure Babel
+
+`npm install --save-dev @babel/core @babel/preset-env @babel/preset-react @babel/preset-typescript babel-loader`
+
+Install and configure ForkTSChecker plugin, for checking TypeScript during dev and build
+
+`npm install --save-dev fork-ts-checker-webpack-plugin`
