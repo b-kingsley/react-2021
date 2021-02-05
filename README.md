@@ -4,11 +4,11 @@ A boilerplate Webpack, React and TypeScript project.
 
 - Webpack 5.20.1
 - TypeScript 4.1.3
+- React 17.0.1
+- Babel 7.12.13
 
 To do:
 
-- React
-- Babel
 - ES Lint
 - Prettier
 - React Testing Library
@@ -90,3 +90,9 @@ Install and configure Babel
 Install and configure ForkTSChecker plugin, for checking TypeScript during dev and build
 
 `npm install --save-dev fork-ts-checker-webpack-plugin`
+
+## Step 6 - Babel Configuration and Error Boundary
+
+`npm install babel-plugin-transform-class-properties --save-dev`
+
+`npm install @babel/plugin-proposal-object-rest-spread --save-dev`
