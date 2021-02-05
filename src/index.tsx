@@ -6,27 +6,25 @@ import "./style.css";
 import Icon from "./icon.jpg";
 import printMe from "./print";
 
-declare namespace App {
-  interface IAppProps {
+type AppProps = {
     name: string;
-  }
-}
+};
 
-const App: React.FC<App.IAppProps> = ({ name }) => {
-  return (
-    <main className="hello">
-      React 2021 App Configuration - {name}
-      <img src={Icon} alt=" " />
-      <button onClick={printMe}>Print Me</button>
-    </main>
-  );
+const App: React.FC<AppProps> = ({ name }: AppProps) => {
+    return (
+        <main className="hello">
+            React 2021 App Configuration - {name}
+            <img src={Icon} alt=" " />
+            <button onClick={printMe}>Print Me</button>
+        </main>
+    );
 };
 
 ReactDOM.render(
-  <React.StrictMode>
-    <ErrorBoundary>
-      <App name="Hello" />
-    </ErrorBoundary>
-  </React.StrictMode>,
-  document.getElementById("root")
+    <React.StrictMode>
+        <ErrorBoundary>
+            <App name="Hello" />
+        </ErrorBoundary>
+    </React.StrictMode>,
+    document.getElementById("root"),
 );

@@ -2,23 +2,24 @@
 
 A boilerplate Webpack, React and TypeScript project.
 
-- Webpack 5.20.1
-- TypeScript 4.1.3
-- React 17.0.1
-- Babel 7.12.13
+-   Webpack 5.20.1
+-   TypeScript 4.1.3
+-   React 17.0.1
+-   Babel 7.12.13
+-   ES Lint
+-   Prettier
 
 To do:
 
-- ES Lint
-- Prettier
-- React Testing Library
-- Material UI
-- Redux Toolkit
-- React Query
-- React Async
-- React Router
-- React Spring
-- SignalR
+-   React Testing Library
+-   Webpack production settings
+-   Material UI
+-   Redux Toolkit
+-   React Query
+-   React Async
+-   React Router
+-   React Spring
+-   SignalR
 
 ## Step 1 - Project setup with Webpack
 
@@ -96,3 +97,9 @@ Install and configure ForkTSChecker plugin, for checking TypeScript during dev a
 `npm install babel-plugin-transform-class-properties --save-dev`
 
 `npm install @babel/plugin-proposal-object-rest-spread --save-dev`
+
+## Step 7 - ESLint and Prettier
+
+`npm install eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-react --save-dev`
+
+`npm install prettier eslint-config-prettier eslint-plugin-prettier --save-dev`
