@@ -8,10 +8,10 @@ A boilerplate Webpack, React and TypeScript project.
 -   Babel 7.12.13
 -   ES Lint
 -   Prettier
+-   React Testing Library
 
 To do:
 
--   React Testing Library
 -   Webpack production settings
 -   Material UI
 -   Redux Toolkit
@@ -103,3 +103,11 @@ Install and configure ForkTSChecker plugin, for checking TypeScript during dev a
 `npm install eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-react --save-dev`
 
 `npm install prettier eslint-config-prettier eslint-plugin-prettier --save-dev`
+
+## Step 8 - React Testing Library
+
+`npm install --save-dev @testing-library/react @testing-library/jest-dom jest`
+
+`npm install --save-dev ts-jest @types/jest @types/testing-library__react @types/testing-library__jest-dom`
+
+ts-jest config:init
