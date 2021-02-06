@@ -9,11 +9,12 @@ A boilerplate Webpack, React and TypeScript project.
 -   ES Lint
 -   Prettier
 -   React Testing Library
+-   Webpack Production
 
 To do:
 
--   Webpack production settings
 -   Material UI
+-   Tailwind
 -   Redux Toolkit
 -   React Query
 -   React Async
@@ -111,3 +112,12 @@ Install and configure ForkTSChecker plugin, for checking TypeScript during dev a
 `npm install --save-dev ts-jest @types/jest @types/testing-library__react @types/testing-library__jest-dom`
 
 ts-jest config:init
+
+## Step 9 - Production
+
+`npm tsconfig-paths-webpack-plugin`
+`npm install --save-dev webpack-merge`
+
+`npm install --save-dev mini-css-extract-plugin`
+
+`npm install --save-dev css-minimizer-webpack-plugin`
