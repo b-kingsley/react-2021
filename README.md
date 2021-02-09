@@ -121,3 +121,9 @@ ts-jest config:init
 `npm install --save-dev mini-css-extract-plugin`
 
 `npm install --save-dev css-minimizer-webpack-plugin`
+
+## Step 10 - Chakra
+
+`npm i @chakra-ui/react --legacy-peer-deps`
+
+`npm i @emotion/react @emotion/styled framer-motion`
