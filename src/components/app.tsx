@@ -1,18 +1,35 @@
 import * as React from "react";
-import "./style.css";
-import Icon from "./icon.jpg";
-import printMe from "./print";
+import { makeStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import IconButton from "@material-ui/core/IconButton";
+import MenuIcon from "@material-ui/icons/Menu";
 
-type AppProps = {
-    name: string;
-};
+const useStyles = makeStyles((theme) => ({
+    root: {
+        flexGrow: 1,
+    },
+    menuButton: {
+        marginRight: theme.spacing(2),
+    },
+}));
 
-export const App: React.FC<AppProps> = ({ name }: AppProps) => {
+export const App: React.FC = () => {
+    const classes = useStyles();
+
     return (
-        <main className="hello">
-            React 2021 App Configuration - {name}
-            <img src={Icon} alt=" " />
-            <button onClick={printMe}>Print Me</button>
-        </main>
+        <div className={classes.root}>
+            <AppBar position="static">
+                <Toolbar variant="dense">
+                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                        <MenuIcon />
+                    </IconButton>
+                    <Typography variant="h6" color="inherit">
+                        React 2021
+                    </Typography>
+                </Toolbar>
+            </AppBar>
+        </div>
     );
 };

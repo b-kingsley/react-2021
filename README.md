@@ -10,11 +10,13 @@ A boilerplate Webpack, React and TypeScript project.
 -   Prettier
 -   React Testing Library
 -   Webpack Production
+-   Material UI
 
 To do:
 
--   Material UI
--   Tailwind
+-   Tailwind?
+-   Chakra?
+-   MSAL
 -   Redux Toolkit
 -   React Query
 -   React Async
@@ -121,3 +123,7 @@ ts-jest config:init
 `npm install --save-dev mini-css-extract-plugin`
 
 `npm install --save-dev css-minimizer-webpack-plugin`
+
+## Step 10 - Material UI
+
+`npm install @material-ui/core @material-ui/icons`
