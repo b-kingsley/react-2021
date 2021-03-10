@@ -20,7 +20,8 @@
         "noUnusedParameters": true,
         "incremental": true,
         "noFallthroughCasesInSwitch": true,
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "listEmittedFiles": true
     },
     "paths": {
         "components/*": ["components/*"]

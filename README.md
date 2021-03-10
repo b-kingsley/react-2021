@@ -11,17 +11,18 @@ A boilerplate Webpack, React and TypeScript project.
 -   React Testing Library
 -   Webpack Production
 -   Material UI
+-   React Async
+-   Tailwind CSS
 
 To do:
 
--   Tailwind?
--   Chakra?
+-   Azure Static Web Apps
+-   CI / CD
 -   MSAL
+-   React Query?
 -   Redux Toolkit
--   React Query
--   React Async
 -   React Router
--   React Spring
+-   React Spring?
 -   SignalR
 
 ## Step 1 - Project setup with Webpack
@@ -127,3 +128,17 @@ ts-jest config:init
 ## Step 10 - Material UI
 
 `npm install @material-ui/core @material-ui/icons`
+
+## Step 11 - React Async
+
+`npm install --save-dev @babel/plugin-transform-runtime`
+`npm install @babel/runtime`
+`npm install react-async`
+
+## Step 12 - Tailwind CSS
+
+`npm install tailwindcss postcss-loader`
+
+Replace Material UI implementation with Tailwind
+
+`npm install styled-react-modal --legacy-peer-deps`

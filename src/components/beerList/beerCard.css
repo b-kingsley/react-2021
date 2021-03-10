@@ -1,0 +1,10 @@
+.beerCard {
+    max-width: 380px;
+    min-height: 500px;
+    margin-bottom: 16px;
+}
+
+.beerCard--media {
+    height: 140px;
+    background-size: contain !important;
+}
