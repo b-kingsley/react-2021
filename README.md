@@ -13,14 +13,14 @@ A boilerplate Webpack, React and TypeScript project.
 -   Material UI
 -   React Async
 -   Tailwind CSS
+-   Redux Toolkit
 
 To do:
 
+-   Axios / React Query
 -   Azure Static Web Apps
 -   CI / CD
 -   MSAL
--   React Query?
--   Redux Toolkit
 -   React Router
 -   React Spring?
 -   SignalR
@@ -108,13 +108,22 @@ Install and configure ForkTSChecker plugin, for checking TypeScript during dev a
 
 `npm install prettier eslint-config-prettier eslint-plugin-prettier --save-dev`
 
+Basic ESLint config:
+
+```
+{
+    "parser": "@typescript-eslint/parser",
+    "extends": ["plugin:@typescript-eslint/recommended"]
+}
+```
+
 ## Step 8 - React Testing Library
 
 `npm install --save-dev @testing-library/react @testing-library/jest-dom jest`
 
 `npm install --save-dev ts-jest @types/jest @types/testing-library__react @types/testing-library__jest-dom`
 
-ts-jest config:init
+`ts-jest config:init`
 
 ## Step 9 - Production
 
@@ -142,3 +151,9 @@ ts-jest config:init
 Replace Material UI implementation with Tailwind
 
 `npm install styled-react-modal --legacy-peer-deps`
+
+## Step 13 - Redux Toolkit
+
+`npm i @reduxjs/toolkit react-redux`
+
+`npm i -D @types/react-redux`
