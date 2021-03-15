@@ -17,11 +17,11 @@ A boilerplate Webpack, React and TypeScript project.
 
 To do:
 
+-   React Router
 -   Axios / React Query
 -   Azure Static Web Apps
 -   CI / CD
 -   MSAL
--   React Router
 -   React Spring?
 -   SignalR
 
@@ -157,3 +157,13 @@ Replace Material UI implementation with Tailwind
 `npm i @reduxjs/toolkit react-redux`
 
 `npm i -D @types/react-redux`
+
+## Step 14 - React Router
+
+`npm i react-router-dom`
+
+`npm i --save-dev @types/react-router-dom`
+
+To implement a catch-all redirect, use the index page itself as the proxy with:
+
+`http-server --proxy http://localhost:8080?`

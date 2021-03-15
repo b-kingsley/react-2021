@@ -21,7 +21,7 @@ describe("<BeerList />", () => {
     it("should render loading", () => {
         const { getByText } = renderComponent();
         expect(window.fetch).toBeCalledWith("https://api.punkapi.com/v2/beers");
-        getByText("Loading...");
+        getByText(/Loading.../);
     });
     it("should render data when loaded", async () => {
         const { findByTestId, findByText } = renderComponent();
@@ -33,6 +33,6 @@ describe("<BeerList />", () => {
     it("should render an error", async () => {
         (window.fetch as jest.Mock).mockResolvedValue({ json: () => Promise.reject(new Error("Failed")) });
         const { findByText } = renderComponent();
-        await findByText("An error occurred");
+        await findByText(/An error occurred/);
     });
 });

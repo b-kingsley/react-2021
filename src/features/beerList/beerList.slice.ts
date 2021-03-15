@@ -6,6 +6,7 @@ const initialState: BeerList.State = {
     meta: {
         status: "init",
         message: "",
+        lastUpdated: undefined,
     },
 };
 
@@ -19,6 +20,7 @@ export const beerListSlice = createSlice({
         },
         getBeersSuccess: (state, action: PayloadAction<BeerList.Beer[]>) => {
             state.meta.status = "loaded";
+            state.meta.lastUpdated = Date.now();
             state.items = action.payload;
             return state;
         },
