@@ -1,6 +1,6 @@
 import { Case } from "common/components/switch/case";
 import { Switch } from "common/components/switch";
-import { fetchBeers } from "./beerList.thunks";
+import { fetchBeers, cancelFetchBeers } from "./beerList.thunks";
 import { beerListSelector } from "features/beerList/beerList.slice";
 import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,6 +12,7 @@ export const BeerList: React.FC = () => {
 
     React.useEffect(() => {
         dispatch(fetchBeers());
+        return () => cancelFetchBeers("Fetch beers request cancelled");
     }, [dispatch]);
 
     return (
