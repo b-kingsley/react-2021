@@ -8,7 +8,8 @@
         "analyze": "webpack-bundle-analyzer stats.json",
         "start": "webpack serve --open --config webpack.dev.js",
         "watch": "webpack --watch",
-        "test": "jest --coverage --watch"
+        "test": "jest --coverage --watch",
+        "dist": "http-server dist --proxy http://localhost:8080?"
     },
     "repository": {
         "type": "git",
@@ -34,6 +35,7 @@
         "@types/react": "^17.0.1",
         "@types/react-dom": "^17.0.0",
         "@types/react-redux": "^7.1.16",
+        "@types/react-router-dom": "^5.1.7",
         "@types/testing-library__jest-dom": "^5.9.5",
         "@types/testing-library__react": "^10.2.0",
         "@typescript-eslint/eslint-plugin": "^4.14.2",
@@ -71,6 +73,7 @@
         "react-async": "^10.0.1",
         "react-dom": "^17.0.1",
         "react-redux": "^7.2.2",
+        "react-router-dom": "^5.2.0",
         "tailwindcss": "^2.0.3"
     }
 }

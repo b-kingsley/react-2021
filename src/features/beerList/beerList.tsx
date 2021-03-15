@@ -25,7 +25,7 @@ export const BeerList: React.FC = () => {
                 </div>
             </Case>
             <Case value="init"></Case>
-            <Case value="error">An error occurred</Case>
+            <Case value="error">An error occurred: {meta.message}</Case>
         </Switch>
     );
 };
