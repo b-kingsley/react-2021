@@ -4,8 +4,9 @@ import { BeerList } from "./beerList";
 import { Provider } from "react-redux";
 import { store } from "common/store";
 import { beers } from "./beerList.data";
+import axios from "axios";
 
-window.fetch = jest.fn();
+jest.mock("axios");
 
 const renderComponent = () =>
     render(
@@ -16,11 +17,18 @@ const renderComponent = () =>
 
 describe("<BeerList />", () => {
     beforeEach(() => {
-        (window.fetch as jest.Mock).mockResolvedValue({ json: () => Promise.resolve(beers) });
+        (axios.get as jest.Mock).mockImplementation(() => Promise.resolve({ data: beers }));
+        axios.CancelToken = {
+            source: () => {
+                return { token: "1234" } as any;
+            },
+            cancel: () => {},
+        } as any;
     });
     it("should render loading", () => {
         const { getByText } = renderComponent();
-        expect(window.fetch).toBeCalledWith("https://api.punkapi.com/v2/beers");
+        expect(axios.get).toBeCalledWith("https://api.punkapi.com/v2/beers", { cancelToken: "1234" });
+
         getByText(/Loading.../);
     });
     it("should render data when loaded", async () => {
@@ -31,7 +39,7 @@ describe("<BeerList />", () => {
         await findByText(firstBeer.name);
     });
     it("should render an error", async () => {
-        (window.fetch as jest.Mock).mockResolvedValue({ json: () => Promise.reject(new Error("Failed")) });
+        (axios.get as jest.Mock).mockImplementation(() => Promise.reject(new Error("Failed")));
         const { findByText } = renderComponent();
         await findByText(/An error occurred/);
     });
