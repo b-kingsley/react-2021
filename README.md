@@ -14,15 +14,15 @@ A boilerplate Webpack, React and TypeScript project.
 -   React Async
 -   Tailwind CSS
 -   Redux Toolkit
+-   React Router
+-   Axios
 
 To do:
 
--   React Router
--   Axios / React Query
 -   Azure Static Web Apps
 -   CI / CD
 -   MSAL
--   React Spring?
+-   React Spring animations?
 -   SignalR
 
 ## Step 1 - Project setup with Webpack
@@ -167,3 +167,7 @@ Replace Material UI implementation with Tailwind
 To implement a catch-all redirect, use the index page itself as the proxy with:
 
 `http-server --proxy http://localhost:8080?`
+
+## Step 15 - Axios
+
+`npm i axios`

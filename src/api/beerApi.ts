@@ -1,15 +1,14 @@
-import axios, { CancelToken } from "axios";
+import axios, { CancelTokenSource } from "axios";
+let source: CancelTokenSource;
 
-export const getBeers = async (cancellationToken: CancelToken) => {
-    try {
-        const response = await axios.get<BeerList.Beer[]>("https://api.punkapi.com/v2/beers", {
-            cancelToken: cancellationToken,
-        });
-        return response.data;
-    } catch (err) {
-        if (axios.isAxiosError(err)) {
-            console.log("Request cancelled", err);
-        }
-        throw err;
-    }
+export const getBeers = async () => {
+    source = axios.CancelToken.source();
+    const response = await axios.get<BeerList.Beer[]>("https://api.punkapi.com/v2/beers", {
+        cancelToken: source.token,
+    });
+    return response.data;
+};
+
+export const cancel = (message: string) => {
+    if (source) source.cancel(message);
 };

@@ -1,27 +1,25 @@
-import { AppDispatch } from "common/store";
+import { AppDispatch, RootState } from "common/store";
 import { getBeersFailed, getBeers, getBeersSuccess } from "./beerList.slice";
 import * as beerApi from "api/beerApi";
-import { CancelTokenSource } from "axios";
-
-import axios from "axios";
-
-const CancelToken = axios.CancelToken;
-let source: CancelTokenSource;
 
 export function fetchBeers() {
     return async (dispatch: AppDispatch) => {
         dispatch(getBeers());
         try {
-            source = CancelToken.source();
-            const data = await beerApi.getBeers(source.token);
+            const data = await beerApi.getBeers();
             dispatch(getBeersSuccess(data));
         } catch (error) {
-            console.log("error", error);
-            dispatch(getBeersFailed(error.message));
+            dispatch(getBeersFailed({ message: error.message, cancel: error.__CANCEL__ }));
         }
     };
 }
 
 export function cancelFetchBeers(message: string) {
-    if (source) source.cancel(message);
+    return async (_dispatch: AppDispatch, getState: () => RootState) => {
+        // Check if it's still loading before cancelling
+        const state = getState();
+        if (state.features.beerList.meta.status === "loading") {
+            beerApi.cancel(message);
+        }
+    };
 }

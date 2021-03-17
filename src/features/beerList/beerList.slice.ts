@@ -24,8 +24,8 @@ export const beerListSlice = createSlice({
             state.items = action.payload;
             return state;
         },
-        getBeersFailed: (state, action: PayloadAction<Error>) => {
-            state.meta.status = "error";
+        getBeersFailed: (state, action: PayloadAction<{ message: string; cancel: boolean }>) => {
+            state.meta.status = action.payload.cancel ? "cancelled" : "error";
             state.meta.message = action.payload.message;
             return state;
         },

@@ -12,7 +12,9 @@ export const BeerList: React.FC = () => {
 
     React.useEffect(() => {
         dispatch(fetchBeers());
-        return () => cancelFetchBeers("Fetch beers request cancelled");
+        return () => {
+            dispatch(cancelFetchBeers("Fetch beers request cancelled"));
+        };
     }, [dispatch]);
 
     return (
