@@ -2,10 +2,10 @@
 
 A boilerplate Webpack, React and TypeScript project.
 
--   Webpack 5.20.1
--   TypeScript 4.1.3
--   React 17.0.1
--   Babel 7.12.13
+-   Webpack 5
+-   TypeScript 4
+-   React 17
+-   Babel 7
 -   ES Lint
 -   Prettier
 -   React Testing Library
@@ -20,7 +20,7 @@ A boilerplate Webpack, React and TypeScript project.
 To do:
 
 -   Azure Static Web Apps
--   CI / CD
+-   CI / CD Pipelines
 -   MSAL
 -   React Spring animations?
 -   SignalR

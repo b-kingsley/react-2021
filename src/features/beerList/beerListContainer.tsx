@@ -6,7 +6,7 @@ import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BeerCard } from "./components/beerCard";
 
-export const BeerList: React.FC = () => {
+export const BeerListContainer: React.FC = () => {
     const dispatch = useDispatch();
     const { items, meta } = useSelector(beerListSelector);
 

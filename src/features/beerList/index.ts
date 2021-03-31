@@ -1,1 +1,1 @@
-export * from "./beerList";
+export * from "./beerListContainer";

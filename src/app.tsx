@@ -1,6 +1,6 @@
+import { BeerListContainer } from "features/beerList";
 import * as React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { BeerList } from "./features/beerList";
 
 export const App: React.FC = () => {
     return (
@@ -16,7 +16,7 @@ export const App: React.FC = () => {
                 </nav>
                 <Switch>
                     <Route path="/beer-list">
-                        <BeerList />
+                        <BeerListContainer />
                     </Route>
                     <Route path="/">
                         <div className="m-2">

@@ -23,11 +23,6 @@
         "esModuleInterop": true,
         "listEmittedFiles": true
     },
-    "paths": {
-        "api/*": ["api/*"],
-        "common/*": ["common/*"],
-        "features/*": ["features/*"]
-    },
     "include": ["src"],
     "exclude": ["node_modules", "dist"]
 }

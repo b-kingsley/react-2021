@@ -1,17 +1,17 @@
 import * as React from "react";
 import { render } from "@testing-library/react";
-import { BeerList } from "./beerList";
 import { Provider } from "react-redux";
 import { store } from "common/store";
 import { beers } from "./beerList.data";
 import axios from "axios";
+import { BeerListContainer } from "./beerListContainer";
 
 jest.mock("axios");
 
 const renderComponent = () =>
     render(
         <Provider store={store}>
-            <BeerList />
+            <BeerListContainer />
         </Provider>,
     );
 
