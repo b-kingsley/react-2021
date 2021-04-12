@@ -1,12 +1,13 @@
-# Eagle UI 
-React frontend application for the Eagle project. 
+# React 2021
 
-## Prerequisites 
-* Node 
-* NPM
+React frontend application
 
-## Installation 
-* Run `npm i` 
-* Run `npm start` 
+## Prerequisites
 
+-   Node
+-   NPM
 
+## Installation
+
+-   Run `npm i`
+-   Run `npm start`
