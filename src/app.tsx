@@ -1,4 +1,4 @@
-import { BeerListContainer } from "features/beerList";
+import { UserInfo } from "features/userInfo";
 import * as React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -9,18 +9,13 @@ export const App: React.FC = () => {
                 <nav className="flex">
                     <div className="m-2">
                         <Link to="/">Home</Link>
-                    </div>
-                    <div className="m-2">
-                        <Link to="/beer-list">Beer List</Link>
-                    </div>
+                    </div>                    
                 </nav>
-                <Switch>
-                    <Route path="/beer-list">
-                        <BeerListContainer />
-                    </Route>
+                <Switch>                    
                     <Route path="/">
                         <div className="m-2">
-                            <h1>Welcome</h1>
+                            <h1>Eagle UI</h1>
+                            <UserInfo />
                         </div>
                     </Route>
                 </Switch>

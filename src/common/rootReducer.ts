@@ -1,8 +1,8 @@
-import { beerListSlice } from "features/beerList/beerList.slice";
+import { userInfoSlice } from "features/userInfo/userInfoSlice";
 import { combineReducers } from "redux";
 
 const featuresReducer = combineReducers({
-    beerList: beerListSlice.reducer,
+    userInfo: userInfoSlice.reducer,
 });
 
 export const rootReducer = combineReducers({

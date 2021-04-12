@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "common/store";
 
-const initialState: BeerList.State = {
-    items: [],
+const initialState: UserInfo.State = {
+    user: null,
     meta: {
         status: "init",
         message: "",
@@ -10,21 +10,21 @@ const initialState: BeerList.State = {
     },
 };
 
-export const beerListSlice = createSlice({
-    name: "beerList",
+export const userInfoSlice = createSlice({
+    name: "userInfo",
     initialState,
     reducers: {
-        getBeers: (state) => {
+        getUserInfo: (state) => {
             state.meta.status = "loading";
             return state;
         },
-        getBeersSuccess: (state, action: PayloadAction<BeerList.Beer[]>) => {
+        getUserInfoSuccess: (state, action: PayloadAction<UserInfo.User>) => {
             state.meta.status = "loaded";
             state.meta.lastUpdated = Date.now();
-            state.items = action.payload;
+            state.user = action.payload;
             return state;
         },
-        getBeersFailed: (state, action: PayloadAction<{ message: string; cancel: boolean }>) => {
+        getUserInfoFailed: (state, action: PayloadAction<{ message: string; cancel: boolean }>) => {
             state.meta.status = action.payload.cancel ? "cancelled" : "error";
             state.meta.message = action.payload.message;
             return state;
@@ -32,6 +32,6 @@ export const beerListSlice = createSlice({
     },
 });
 
-export const { getBeers, getBeersSuccess, getBeersFailed } = beerListSlice.actions;
+export const { getUserInfo, getUserInfoSuccess, getUserInfoFailed } = userInfoSlice.actions;
 
-export const beerListSelector = (state: RootState) => state.features.beerList;
+export const userInfoSelector = (state: RootState) => state.features.userInfo;
